@@ -1,4 +1,5 @@
-//Linear Search//
+//Linear Search Algorithm Lesson//
+
 #include "stdio.h"
 
 int main () {
@@ -7,7 +8,7 @@ int main () {
 
     int size = sizeof(myArray)/sizeof (myArray[0]);
 
-    int toFind = 880;
+    int toFind = 11;
 
     int count=0;
 
