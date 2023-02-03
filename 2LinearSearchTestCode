@@ -1,0 +1,31 @@
+#include"stdio.h"
+
+int main (){
+
+    int myArray[50];
+    int size;
+    int key;
+    int i;
+
+    printf("Please enter the length of myArray:");
+    scanf("%d", &size);
+
+    printf("Please enter the elements for myArray: ");
+    for(i=0; i<size; i++)
+        scanf("%d", &myArray[i]);
+
+    printf("Please put the key to search: \n");
+    scanf("%d", &key);
+
+    for(i=0; i<size; i++)
+        if(myArray[i]==key)
+            break;
+
+    if(i<size)
+        printf("We found the key at Index No. %d", i);
+    else{
+        printf("The key is not found!");
+    }
+
+    return 0;
+}
