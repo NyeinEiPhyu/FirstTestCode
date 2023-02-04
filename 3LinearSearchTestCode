@@ -1,0 +1,33 @@
+#include "stdio.h"
+
+int searchElement (int arrAy[], int length, int key){
+
+    int i=0;
+
+    for(i=0; i<length; i++)
+        if(arrAy[i]==key)
+            return i;
+
+    return -1;
+
+}
+int main (){
+
+    int arrAy[]={1, 2, 3, 4, 11, 21, 12, 8, 10};
+
+    int length=sizeof (arrAy)/sizeof (arrAy[2]);
+
+    int key=21;
+
+    int result = searchElement(arrAy, length, key);
+
+    printf("%d\n", result);
+
+    (result == -1)
+
+    ? printf("Key is not present in the array!")
+
+    : printf("Key is present at Index No.%d", result);
+
+    return 0;
+}
