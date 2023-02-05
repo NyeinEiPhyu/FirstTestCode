@@ -1,0 +1,38 @@
+#include"stdio.h"
+
+#include"stdio.h"
+
+int main(){
+    int array[50];
+    int i, size, key;
+    int count=0;
+
+    printf("Please define the size of array:");
+    scanf("%d", &size);
+
+    printf("Please enter the elements: \n");
+    for(i=0; i<size; i++)
+        scanf("%d", &array[i]);
+
+    printf("The elements in the array are:");
+    for(i=0; i<size; i++)
+        printf(" %d", array[i]);
+
+    printf("\nPlease type the key element to find:");
+    scanf("%d", &key);
+
+    for(i=0; i<size; i++)
+        if(array[i]==key){
+            printf("\nKey is present at index no. %d", i);
+            count++;
+        }
+
+    printf("\nCount Value is: %d", count);
+
+    if(count==0)
+        printf("The key element is not present in the array!");
+    else
+        printf("\nKey element found %d times in the array.\n", count);
+
+    return 0;
+}
