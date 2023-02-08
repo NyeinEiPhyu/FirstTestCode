@@ -1,0 +1,66 @@
+#include"stdio.h"
+#include "math.h"
+
+int min(int step, int size){
+    if(step<size){
+        return step;
+    }else{
+        return size;
+    }
+}
+
+int jumpSearch(int sortedArray[], int size, int key){
+
+    int step = sqrt(size);
+
+    int startPoint = 0;
+
+    int i=0;
+
+    while (sortedArray[min(step, size)-1]<key){
+
+         startPoint = step; //ပထမတစ်ကြိမ်ခုန်ပြီးတဲ့အခါမှာ startPoint က ပထမဦးဆုံး step ရဲ့ တန်ဖိုး‌ဖြစ်သွားမယ်
+
+        step = step + sqrt(size); // ထပ်ခုန်ဖို့အတွက် step ရှာ
+
+        if (sortedArray[step]==key){  // ရှာတဲ့ element နဲ့ညီမညီစစ်
+            return step;
+        }
+
+        if (startPoint>=size){  //step က array ရဲ့ size ထက်ကျော်သွားရင် process end ဖို့ endpoint သတ်မှတ်ပေးထားတာ
+            return -1;
+        }
+    }
+
+    for(i=startPoint; i<step; i++){  // linear Search နည်းသုံးပြီး startPoint နဲ့ step ကြားထဲက element တစ်ခုချင်းစီကိုအစဥ်လိုက်တိုက်စစ်
+
+        if(sortedArray[i]==key){
+            return i;
+        }
+    }
+
+    return -1; //ရှာတဲ့ element မပါရင် -1 ပြန်ပေး
+
+}
+
+int main(){
+
+    int sortedArray[] = {1,2,3,4,7,8,9,11,21,30,80,99};
+
+    int size = sizeof (sortedArray)/sizeof (sortedArray[0]);
+
+    int key = 11;
+
+    int indexNumber = jumpSearch(sortedArray, size, key);
+
+    printf("Index Number is %d\n", indexNumber);
+
+    if (indexNumber==-1){
+        printf("%d is not found!", key);
+    }else{
+        printf("%d is present in index number %d", key, indexNumber);
+    }
+
+    return 0;
+}
+
