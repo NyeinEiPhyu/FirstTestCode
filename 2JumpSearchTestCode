@@ -1,0 +1,61 @@
+#include"stdio.h"
+#include "math.h"
+
+int min(int first, int second){
+
+    if(first<second){
+        return first;
+    }else{
+        return second;
+    }
+}
+int jumpSearch(int array[], int size, int key){
+
+    int step = sqrt(size);
+
+    int previous = 0;
+
+    while(array[min(step, size)]<=key){  //key ကငယ်သွားရင် ဒီ loop ကထွက်
+
+        previous = step;
+
+        step = step + sqrt(size);
+
+        if(previous >= size){
+            return -1;
+        }
+    }
+
+    if(array[step]==key){ //ဒီမှာ key နဲ့ညီမညီ လာစစ်
+        return step;
+    }
+
+    for(int i=previous; i<step; i++){ //မညီရင် previous နဲ့ step ကြား အစဥ်လိုက် စစ်ပြီးရှာ
+
+        if(array[i]==key){
+            return i;
+        }
+    }
+
+    return -1; // ရှာတဲ့ key မတွေ့ရင် -1 ပြန်ပေးပြီး အဆုံးသတ်
+}
+
+int main(){
+
+    int array[] = {1,2,3,4,5,6,7,8,9,100,101,102};
+
+    int size=sizeof (array)/sizeof (array[0]);
+
+    int key=11;
+
+    int indexNumber=jumpSearch(array, size, key);
+
+    printf("Index Number is %d\n", indexNumber);
+
+    if(indexNumber==-1){
+        printf("%d is not present in the array!", key);
+    }else{
+        printf("%d is present at index number %d", key, indexNumber);
+    }
+    return 0;
+}
