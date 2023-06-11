@@ -1,0 +1,158 @@
+//Fortune APP by Candy
+
+#include<iostream>
+using namespace std;
+
+int main() {
+
+	int userIp = 0;
+	char first_C = '\0';
+	char second_C = '\0';
+	char third_C = '\0';
+	char fourth_C = '\0';
+	char fifth_C = '\0';
+	int sum = 0;
+	int remainder = 0;
+
+	cout << "Please enter the num of Name: ";
+	cin >> userIp;
+
+	cout << "Number of Name: " << userIp << endl;
+
+	if (userIp == 1) {
+		cout << "Please enter the first C: ";
+		cin >> first_C;
+	}
+	else if (userIp == 2) {
+		cout << "Please enter the first C: ";
+		cin >> first_C;
+
+		cout << "Please enter the second C: ";
+		cin >> second_C;
+	}
+	else if (userIp == 3) {
+		cout << "Please enter the first C: ";
+		cin >> first_C;
+
+		cout << "Please enter the second C: ";
+		cin >> second_C;
+
+		cout << "Please enter the first C: ";
+		cin >> third_C;
+
+	}
+	else if (userIp == 4) {
+		cout << "Please enter the first C: ";
+		cin >> first_C;
+
+		cout << "Please enter the second C: ";
+		cin >> second_C;
+
+		cout << "Please enter the first C: ";
+		cin >> third_C;
+
+		cout << "Please enter the first C: ";
+		cin >> fourth_C;
+	}
+	else if (userIp==5)
+	{
+		cout << "Please enter the first C: ";
+		cin >> first_C;
+
+		cout << "Please enter the second C: ";
+		cin >> second_C;
+
+		cout << "Please enter the first C: ";
+		cin >> third_C;
+
+		cout << "Please enter the first C: ";
+		cin >> fourth_C;
+
+		cout << "Please enter the first C: ";
+		cin >> fifth_C;
+
+
+	}
+	else {
+		cout << "There is no Result for this number! Try Again.";
+	}
+
+	
+	if (userIp == 1) {
+		sum == first_C;
+		cout << "Sum: " << sum << endl;
+	}
+
+	else if (userIp == 2) {
+		sum = first_C + second_C;
+		cout << "Sum: " << sum <<endl;
+	}
+
+	else if (userIp == 3) {
+		sum = first_C + second_C + third_C;
+		cout << "Sum: " << sum <<endl;
+	}
+
+	else if (userIp == 4) {
+		sum = first_C + second_C + third_C + fourth_C;
+		cout << "Sum: " << sum <<endl;
+	}
+
+	else if (userIp == 5) {
+		sum = first_C + second_C + third_C + fourth_C + fifth_C;
+		cout << "Sum: " << sum <<endl;
+	}
+	
+	else {
+		cout << "No Result!";
+	}
+
+	remainder = sum % 10;
+	cout << "Remainder Value is: " << remainder << endl;
+
+	if (remainder == 0) {
+		cout << "******* You need to let go of attachments *******" << endl;
+	}
+	else if (remainder == 1) {
+		cout << "******* You are good in leadership skill ******* " << endl;
+	}
+
+	else if (remainder == 2) {
+		cout << "******* You need to find harmony in relationships ******* " << endl;
+	}
+
+	else if (remainder == 3) {
+		cout << "******* You have creative abilties ******* " << endl;
+	}
+
+	else if (remainder == 4) {
+		cout << "******* You are practical and hard working ******* " << endl;
+	}
+
+	else if (remainder == 5) {
+		cout << "******* You love freedom and adventure ******* " << endl;
+	}
+
+	else if (remainder == 6) {
+		cout << "******* You want to create a harmonius environment ******* " << endl;
+	}
+
+	else if (remainder == 7) {
+		cout << "******* You are lucky ******* " << endl;
+	}
+
+	else if (remainder == 8) {
+		cout << "******* You are good luck in wealth ******* " << endl;
+	}
+
+	else if (remainder == 9) {
+		cout << "******* You need to let go the past and contribute to the better society ******* " << endl;
+	}
+
+	else {
+		cout << "******* NO RESULT! ******* ";
+	}
+
+	return 0;
+
+}
